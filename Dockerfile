@@ -19,6 +19,7 @@ RUN pnpm install -P
 FROM ui as hyperglass
 WORKDIR /opt/hyperglass
 RUN pip3 install -e .
+RUN pip3 install --upgrade 'typer==0.12.5' 'click==8.1.7'
 
 EXPOSE ${HYPERGLASS_PORT}
 CMD ["python3", "-m", "hyperglass.console", "start"]
